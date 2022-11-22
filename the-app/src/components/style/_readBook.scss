@@ -1,0 +1,21 @@
+.read-book {
+    @extend %grid-wrapper;
+
+    &__content {
+        position: relative;
+        @extend %grid-content;
+    }
+
+    &__book {
+        width: 800px;
+        height: 800px;
+
+        &-wrapper {
+            @extend %genre-shadow-hover;
+            border: 3px solid $secondary-bg-color;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.header, .footer {
+    @extend %grid;
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
+    padding: 25px;
+    @extend %shadow;
+    &__content{
+        grid-column: 2/3;
+        display: flex;
+    }
+}
+.header{
+    &__content{
+        justify-content: space-between;
+    }
+    &__left,&__right{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__left{
+        list-style: none;
+    }
+    &__heading{
+        @include font($font-2,700,$p1-fs);
+    }
+    &__genre{
+        @include font($font-2,400,$p2-fs);
+    }
+    &__link{
+        color: $primary-text-color;
+    }
+    &__profile-link{
+        color: $primary-bg-color;
+        text-decoration: none;
+    }
+}
+
+@media (max-width:550px) {
+    .header__heading{
+        display: none;
+    }
+    .header__genre{
+        margin-right: 20px;
+    }
+}

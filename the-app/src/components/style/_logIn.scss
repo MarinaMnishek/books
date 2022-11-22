@@ -1,0 +1,46 @@
+.logIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__wrapper,
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__text,
+    &__link,
+    &__heading {
+        text-align: center;
+        color: $primary-bg-color;
+    }
+
+    &__heading {
+        @include font($font-2, 700, $h1-fs);
+
+    }
+
+    &__link {
+        @include font($font-2, 500, $p1-fs);
+        text-decoration: none;
+    }
+
+    &__redirect {
+        @include font($font-2, 700, $h2-fs);
+        text-decoration: underline;
+    }
+    &__input{
+        &-wrapper{
+        position: relative;
+        height: 75px;
+    }
+        &-error{
+            top: 55px;
+            position: absolute;
+            color: $invalid-color;
+            text-align: center;
+        }
+}
+}
+

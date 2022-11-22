@@ -1,0 +1,36 @@
+.genre{
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @extend %border;
+    margin-top: 50px;
+    &__heading{
+        @include font($font-1,700,$h2-fs);
+        color: $primary-bg-color;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 112px 0;
+        gap: 56px 42px;
+    }
+    &__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $secondary-bg-color;
+        @include font($font-1,500,24px);
+        padding: 20px 50px;
+        background-color: $primary-bg-color;
+        border: 3px solid $secondary-bg-color;
+        border-radius: 8px;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            border: 3px solid $primary-bg-color;
+            @extend %genre-shadow-hover;
+            transform: scale(1.1);
+        }
+    }
+}

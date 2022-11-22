@@ -1,0 +1,12 @@
+.recommended-books {
+    //
+    &__title {
+        // text-align: start;
+        // margin-bottom: 15px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0;
+    }
+}

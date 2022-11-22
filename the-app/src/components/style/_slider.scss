@@ -1,0 +1,14 @@
+.slider{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__heading{
+        @include font($font-1,500,$h3-fs);
+        margin: 0 0 50px 0;
+    }
+    &__link{
+        @include font($font-1,500,$p2-fs); 
+        color: $primary-bg-color;
+    }
+}

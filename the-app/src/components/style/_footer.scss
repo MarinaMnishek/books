@@ -1,0 +1,8 @@
+.footer {
+    &__content{
+        justify-content: center
+    }
+    &__text{
+        @include font($font-2,400,$p2-fs);
+    }
+}
