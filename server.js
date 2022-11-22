@@ -9,7 +9,6 @@ app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use('/api/admin', require('./routes/admin.routes'))
 app.use('/api/booksearch', require('./routes/google.book.routes'))
 
 if (process.env.NODE_ENV === 'production') {
