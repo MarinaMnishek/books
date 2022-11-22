@@ -9,7 +9,9 @@
     "client": "npm run start --prefix the-app",
     "client:install": "npm install --prefix the-app",
     "client:build": "npm run build --prefix the-app",
-    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\""
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix the-app",
+    "install": "concurrently \"npm install\" \"npm install --prefix the-app\""
   },
   "author": "",
   "license": "ISC",
