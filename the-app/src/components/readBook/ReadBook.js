@@ -76,7 +76,7 @@ const ReadBook = () => {
     }, [data])
 
     return (
-        <section className="read-book">
+        <main className="read-book">
             <div className="read-book__content">
                 {loaded
                     ? <>
@@ -92,7 +92,7 @@ const ReadBook = () => {
                 }
                 {error && <h2 className="error">Книга не найдена</h2>}
             </div >
-        </section >
+        </main >
     )
 }
 

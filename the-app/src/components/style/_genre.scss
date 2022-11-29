@@ -34,3 +34,21 @@
         }
     }
 }
+
+@media (max-width:550px){
+    .genre{
+        padding: 20px 5px;
+        margin-top: 20px;
+        &__heading{
+            font-size: $h3-fs;
+        }
+        &__list{
+            padding: 20px 0;
+            gap: 20px 10px;
+        }
+        &__link{
+            font-size: $font-2;
+            padding: 10px 20px;
+        }
+    }
+}

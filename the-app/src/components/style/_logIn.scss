@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     &__wrapper,
     &__text {
         display: flex;
@@ -30,17 +31,34 @@
         @include font($font-2, 700, $h2-fs);
         text-decoration: underline;
     }
-    &__input{
-        &-wrapper{
-        position: relative;
-        height: 75px;
-    }
-        &-error{
-            top: 55px;
+
+    &__input {
+        &-wrapper {
+            position: relative;
+            height: 75px;
+        }
+
+        &-error {
+            top: 53px;
             position: absolute;
             color: $invalid-color;
             text-align: center;
         }
-}
+    }
 }
 
+@media (max-width:550px) {
+    .logIn {
+        &__heading {
+            font-size: $h3-fs
+        }
+
+        &__link {
+            font-size: $p2-fs
+        }
+
+        &__redirect {
+            font-size: $p1-fs;
+        }
+    }
+}

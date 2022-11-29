@@ -1,6 +1,5 @@
 .favourites {
     @extend %grid-wrapper;
-
     &__content {
         position: relative;
         @extend %grid-content;
@@ -43,4 +42,23 @@
             flex-wrap: wrap;
         }
     }
+}
+@media (max-width:900px){
+    .favourites{
+        &__content {
+            padding: 30px 10px;
+        }
+    }
+}
+@media (max-width:550px){
+    .favourites{
+        &__heading {
+font-size: $h2-fs;
+        }
+        &__favourites,&__buy,&__recent {
+            &-heading {
+font-size: $p1-fs;
+            }
+    }
+}
 }
