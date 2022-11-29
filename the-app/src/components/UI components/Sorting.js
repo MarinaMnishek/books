@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { useRef, useState } from 'react';
-import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import uniqid from "uniqid";
 
@@ -13,11 +11,17 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import BasicButton from './BasicButton';
 
-export default function Sorting({ sortBooks, toSortBooks, books }) {
+export default function Sorting({ toSortBooks }) {
 
     const style = {
-        marginBottom: "20px"
+        marginBottom: "20px",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "5px"
     }
 
     const listOfLanguages = [
@@ -41,7 +45,6 @@ export default function Sorting({ sortBooks, toSortBooks, books }) {
 
     const handleClick = (param) => {
         toSortBooks(param);
-        console.log(param);
     }
 
     const [language, setLanguage] = React.useState("");
@@ -57,26 +60,34 @@ export default function Sorting({ sortBooks, toSortBooks, books }) {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
+                sx={{
+                    borderRadius: "8px",
+                    border: "3px solid #FFCA42 ",
+                    fontWeight: "500",
+                    fontSize: "20px",
+                    margin: "0 0 10px 0"
+                }}
             >
                 <div>Фильтры</div>
             </AccordionSummary>
             <AccordionDetails>
                 <ButtonGroup aria-label="outlined primary button group"
                     sx={style} >
-                    {/* <Button onClick={() => sortBooks(books, 'title')}>Название</Button>
-                    <Button onClick={() => sortBooks(books, 'authors[0]')}>Автор</Button>
-                    <Button onClick={()=> handleClick('&orderBy=newest')}>Сначала новые</Button>
-                    <Button onClick={()=> handleClick('&langRestrict=el')}>RU</Button>
-                    <Button onClick={()=> handleClick('&download=epub')}>epub</Button>
-                    <Button onClick={() => sortBooks(books, 'categories')}>Категория</Button> */}
-                    <Button onClick={() => handleClick('&orderBy=newest')}>Сначала новые</Button>
-                    <Button onClick={() => handleClick('&filter=free-ebooks')}>Бесплатные</Button>
-                    <Button onClick={() => handleClick('&filter=paid-ebooks')}>Платные</Button>
-                    <Button onClick={() => handleClick('&printType=books')}>Книги</Button>
-                    <Button onClick={() => handleClick('&printType=magazines')}>Журналы</Button>
-                    <Button onClick={() => handleClick('&download=epub')}>epub</Button>
-                    <FormControl sx={{ minWidth: "150px" }}>
-                        <InputLabel id="demo-simple-select-label" sx={{ color: "#1B3764" }}>Язык</InputLabel>
+                    <BasicButton handleDoing={() => handleClick('&orderBy=newest')} textBtn={"Сначала новые"} />
+                    <BasicButton handleDoing={() => handleClick('&filter=free-ebooks')} textBtn={"Бесплатные"} />
+                    <BasicButton handleDoing={() => handleClick('&filter=paid-ebooks')} textBtn={"Платные"} />
+                    <BasicButton handleDoing={() => handleClick('&printType=books')} textBtn={"Книги"} />
+                    <BasicButton handleDoing={() => handleClick('&printType=magazines')} textBtn={"Журналы"} />
+                    <BasicButton handleDoing={() => handleClick('&download=epub')} textBtn={"epub"} />
+                    <FormControl sx={{
+                        minWidth: "100px",
+                        borderRadius: "8px",
+                        border: "3px solid #FFCA42 "
+                    }}>
+                        <InputLabel id="demo-simple-select-label"
+                            sx={{
+                                color: "#1B3764",
+                            }}>Язык</InputLabel>
                         <Select
                             labelId="demo-select-small"
                             id="demo-select-small"

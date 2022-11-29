@@ -17,3 +17,17 @@
         flex-grow:1;
     }
 }
+
+@media (max-width:550px){
+    .genre-list {
+        &__heading{
+            font-size: $h2-fs;
+            margin: 0 0 20px 0;
+        }
+        &__list{
+            padding: 20px 0;
+            gap: 10px;
+            flex-grow:1;
+        }
+    }
+}

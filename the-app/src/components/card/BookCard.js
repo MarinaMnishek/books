@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./bookCard.scss";
 import BasicRating from '../UI components/BasicRating';
 import { useDispatch } from "react-redux";
 import { currentBook } from "../../store/actions/getListOfBooksActions";
@@ -9,7 +8,7 @@ export const BookCard = ({ book }) => {
   const dispatch = useDispatch();
 
   const { id } = book;
-  const { title, categories, authors, publishedDate } = book.volumeInfo;
+  const { title, categories, authors, publishedDate, averageRating } = book.volumeInfo;
 
   return (
     <figure className="book" >
@@ -22,7 +21,10 @@ export const BookCard = ({ book }) => {
         <p className="book__text">Категория: {categories ? categories : "Нет информации"}</p>
         <p className="book__text">Авторы: {authors ? authors : "Нет информации"}</p>
         <p className="book__text">Год: {publishedDate ? publishedDate : "Нет информации"}</p>
-        <BasicRating />
+        <BasicRating
+          averageRating={averageRating}
+          book={book}
+        />
       </figcaption>
       <Link className="book__link" to={`/book/${id}`} onClick={() => dispatch(currentBook(book))}>
         Подробнее...

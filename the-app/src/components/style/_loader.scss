@@ -8,6 +8,7 @@
     width: 200px;
     height: 140px;
     position: relative;
+    align-self: center;
     &__heading{
         text-align: center;
         color: $secondary-text-color;

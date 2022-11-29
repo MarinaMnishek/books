@@ -1,5 +1,6 @@
 .profile {
     @extend %grid-wrapper;
+
     &__content {
         position: relative;
         @extend %grid-content;
@@ -86,7 +87,7 @@
     &__info {
         width: 175px;
         text-align: right;
-
+        line-height: 40px;
         &--info {
             text-align: left;
         }
@@ -132,5 +133,48 @@
 
     &__reset {
         margin-top: 30px;
+    }
+}
+
+@media (max-width:900px) {
+    .profile {
+        &__content {
+            padding: 30px 10px;
+        }
+    }
+}
+
+@media (max-width:650px) {
+    .profile {
+        &__content{
+            margin: 20px 5px;
+        }
+        &__heading {
+            font-size: $h2-fs;
+        }
+
+        &__button-wrapper {
+            flex-direction: row
+        }
+        
+        &__container, &__left {
+            flex-direction: column;
+        }
+        &__info {
+            text-align: center;
+            &--info {
+                text-align: center;
+            }
+        }
+        &__form {
+            &-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &-heading {
+                font-size: $h3-fs;
+            }
+        }
     }
 }

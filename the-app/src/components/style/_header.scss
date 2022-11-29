@@ -19,7 +19,8 @@
         gap: 20px;
     }
     &__left{
-        list-style: none;
+        list-style: none;       
+        margin-right: 10px;
     }
     &__heading{
         @include font($font-2,700,$p1-fs);
@@ -37,10 +38,13 @@
 }
 
 @media (max-width:550px) {
-    .header__heading{
-        display: none;
-    }
-    .header__genre{
-        margin-right: 20px;
+    .header{
+        padding: 10px 5px;
+        &__logo,&__genre {
+            display: none;
+        }
+        &__right{
+           gap:5px;
+        }
     }
 }

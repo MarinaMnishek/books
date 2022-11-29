@@ -1,6 +1,5 @@
 import { BookCard } from "../card/BookCard";
 import uniqid from "uniqid";
-import "../style/_recommendedBooks.scss";
 import { postData } from "../../helpers/bookRequest";
 import { useEffect, useState } from "react";
 

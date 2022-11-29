@@ -1,53 +1,89 @@
 .bookPage {
-    max-width: 1200px;
-    height: 100%;
-    margin: 0 auto;
+    @extend %grid-wrapper;
     @include font ();
     color: $secondary-text-color;
     line-height: 24px;
-    flex-grow: 1;
-}
-.boldText {
-    font-weight: bold;
-}
-.bookPage__wrapper {
-    display: flex;
-    justify-content: start;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 0 15px;
-}
-.bookPage__img {
-    object-fit: contain;
-    max-width: 100%;
-    height: 400px;
-    border: 3px solid #FFCA42;
-    margin-right: 30px;
-    border-radius: 8px;
-}
-.bookPage__startInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-        &-title {
-            letter-spacing: 0.05em;
-        }
-}
-.book__buttons {
-    display: flex;
-}
-.bookPage__description {
-    margin: 10px;
-        &-title {
-            margin-bottom: 15px;
-        }
-}
-@media (max-width: 599px) {
-    .bookPage__wrapper {
+    &__wrapper {
+        @extend %grid-content;
+        display: flex;
         flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 15px;
     }
-    .bookPage__img {
-        margin: 0 auto;
-        margin-bottom: 15px;
+
+    &__info {
+        display: flex;
+    }
+
+    &__img {
+        &-wrapper {
+            position: relative;
+            overflow: hidden;
+            width: 270px;
+            height: 400px;
+            @extend %border;
+            margin: 0 20px 0 0;
+            background-color: $third-bg-color;
+            flex-shrink: 0;
+        }
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        width: 100%;
+        height:100%
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__heading {
+        @include font($font-1, 700, $h1-fs);
+        line-height: 30px;
+    }
+
+    &__text {
+        @include font($font-1, 500, $p1-fs);
+    }
+
+    &__buttons {
+        display: flex;
+    }
+}
+
+@media (max-width: 700px) {
+    .bookPage {
+        &__wrapper {
+            align-items: center;
+        }
+        &__info {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__content {
+            justify-content:center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        &__heading {
+            font-size: $h2-fs;
+        }
+
+        &__text {
+            font-size: $p2-fs;
+        }
+
+        &__buttons {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 }

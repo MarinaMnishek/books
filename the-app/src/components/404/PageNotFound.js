@@ -22,7 +22,9 @@ const PageNotFound = () => {
                 Извините, произошла ошибка или страница не найдена!
             </h1>
             <img className="page-not-found__img" src={pic} alt="404" />
-            <p className="page-not-found__text">Пожалуйста, перейдите <HomeButton /> или ожидайте автоматической переадресации.</p>
+            <p className="page-not-found__text">Пожалуйста,ожидайте автоматической переадресации или нажмите
+            </p>
+            <HomeButton />
         </main>
     )
 }

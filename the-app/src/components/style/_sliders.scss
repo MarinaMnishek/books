@@ -17,3 +17,16 @@
         justify-content: center;
     }
 }
+
+@media (max-width:550px){
+    .sliders{
+        padding: 10px 5px;
+        &__heading{
+            font-size: $h3-fs;
+            margin: 0 0 20px 0;
+        }
+        &__content{
+            gap: 10px;
+        }
+    }
+}

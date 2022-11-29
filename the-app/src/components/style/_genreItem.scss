@@ -1,6 +1,6 @@
 .genre-item{
-    width: 350px;
-    height: 172px;
+    width: 327px;
+    height: 160px;
     border-radius: 8px;
     overflow: hidden;
     @extend %genre-shadow;
@@ -17,10 +17,10 @@
     }
     &__img{
         position: absolute;
-        width: 113%;
-        height: 113%;
+        width: 114%;
+        height: 114%;
         object-fit: contain;
-        top: -8px;
-        left: -27px;
+        top: -6px;
+        left: -25px;
     }
 }
